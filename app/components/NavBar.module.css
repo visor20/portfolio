@@ -1,0 +1,22 @@
+.mainUl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3em;
+  list-style-type: none;
+}
+
+.listElement {
+  padding: 1.5em;
+  display: inline-block;
+  border-radius: 2.5px;
+}
+
+.listElement:hover {
+  color: var(--accent);
+  background-color: var(--deep-black);
+}

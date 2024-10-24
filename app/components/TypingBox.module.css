@@ -1,0 +1,29 @@
+.parentContainer {
+  position: absolute;
+  width: 12.75em;
+}
+
+.typingContainerLeft {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: var(--black);
+  color: var(--white);
+  margin-bottom: 1em;
+  text-align: left;
+  justify-self: left;
+  padding-right: 0.5em;
+
+}
+
+.typingContainerRight {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  background-color: var(--black);
+  color: var(--white);
+  margin-bottom: 1em;
+  text-align: right;
+  justify-self: right;
+  padding-left: 0.5em;
+}
