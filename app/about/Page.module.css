@@ -1,34 +1,41 @@
 .mainAboutContainer {
-  position: absolute;
-  top: 3em;
-  left: 0;
   display: flex;
-  width: 100vw;
-  height: calc(100vh - 6em);
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .aboutImageContainer {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 .aboutTextContainer {
+  padding: 1em;
+  display: grid;
   flex: 2;
 }
 
 .ppImage {
-  width: 50%;
+  margin: 1em 0em 1em 0em;
+  width: 80%;
   height: auto;
   object-fit:cover;
 }
 
 .bootsImage {
-  width: 50%;
+  margin: 1em 0em 1em 0em;
+  width: 70%;
   height: auto;
   object-fit: cover;
 }
 
-
+.aboutText {
+  background-color: var(--gray);
+  color: var(--white);
+  padding: 0.5em;
+  margin: 0em 0em 1em 0em;
+}

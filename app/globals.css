@@ -2,7 +2,8 @@
   --white: #f6f6f6;
   --black: #050910;
   --deep-black: #041417;
-  --accent: #70e7d1
+  --accent: #70e7d1;
+  --gray: #3f4a48;
 }
 
 html,
@@ -29,4 +30,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* general layout to confine all pages to the correct area */
+.real-body {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 7em);
 }
