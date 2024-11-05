@@ -1,24 +1,21 @@
 import styles from './Footer.module.css';
 
-const Footer = () => {
+const Footer = ({ ref }) => {
     return(
-      <div className={styles.mainContainer}>
+      <div ref={ref} className={styles.mainContainer}>
         <div className={styles.contactContainer}>
           <h3>Contact Me</h3>
         </div>
       
-        <div className={styles.subContainer}>
-          <ul className={styles.footerNav}>
-            <li><a href="https://www.linkedin.com/in/richard-viso-184401248" target="_blank">My LinkedIn</a></li>
-            <li>richardnviso@gmail.com</li>
-            <li>225-287-0149</li>
-          </ul>
+        <ul className={styles.footerNav}>
+          <li><a href="https://www.linkedin.com/in/richard-viso-184401248" target="_blank">My LinkedIn</a></li>
+          <li>richardnviso@gmail.com</li>
+          <li>225-287-0149</li>
+        </ul>
 
-          <div className={styles.copyright}>
-            <p>© 2024 Richard Viso. All Rights Reserved.</p>
-          </div>
+        <div className={styles.copyright}>
+          <p>© 2024 Richard Viso. All Rights Reserved.</p>
         </div>
-
       </div>
     );
 }

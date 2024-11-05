@@ -1,3 +1,4 @@
+'use client';
 import ProjectItem from '../components/ProjectItem';
 import styles from './page.module.css';
 // root/projects

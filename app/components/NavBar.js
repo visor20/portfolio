@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from './NavBar.module.css'
 
-const NavBar = () => {
+const NavBar = ({ ref, scrollFunction }) => {
     return(
         <ul className={styles.mainUl}>
             <li className={styles.listElement}>
@@ -12,6 +12,9 @@ const NavBar = () => {
             </li>
             <li className={styles.listElement}>
                 <Link href="/about">About</Link>
+            </li>
+            <li className={styles.listElement} onClick={scrollFunction}>
+              <p>Contact Me</p>
             </li>
             <li className={styles.listElement}>
                 <a href="/Richard Viso - Resume.pdf" target ="_blank">
