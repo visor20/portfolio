@@ -2,12 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+
+  /* ensure space for animation */
+  height: 50%;
+  width: 50%;
 }
 
 .logo {
-  width: 35%;
+  width: 70%;
   height: auto;
 }
 
