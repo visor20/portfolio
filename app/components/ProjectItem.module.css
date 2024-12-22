@@ -1,4 +1,50 @@
-.projectItemContainer {
+.default, .hover {
   padding: 1em;
+  border-radius: 5px;
+  border: dashed var(--gray);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.25fr 0.75fr;
+}
+
+.hover {
+  background-color: var(--light-gray);
+}
+
+.titleBox {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  height: calc(100% / 1.1);
+  width: calc(100% / 1.1);
+  font-size: 0.75em;
+}
+
+.projectImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projectImage img {
+  width: 70%;
+  height: auto;
+}
+
+.buttonContainer {
+  display: flex;
+  background-color: var(--gray);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }

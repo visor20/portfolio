@@ -16,19 +16,21 @@
   display: flex;
   font-size: 1em;
   height: 3em;
-  width: 10%;
+  width: 12%;
 }
 
-.listElement > a, .listElement > p {
+.listElement > a, .contact {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  cursor: pointer; /* ensures <p> appears as a link */
+  cursor: pointer; /* ensures contact appears as a link */
 }
 
-
+.listElement > a > p, .contact > p{
+  margin-left: 8px;
+}
 
 .listElement:hover {
   color: var(--white);

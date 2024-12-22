@@ -1,11 +1,21 @@
+.parentContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  margin: 1em 0 2em 0;
+  color: var(--gray);
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  gap: 2em;
   height: 100%;
   width: 100%;
-}
-
-.gridItem {
-  padding: 1em;
 }
