@@ -16,7 +16,7 @@
   display: flex;
   font-size: 1em;
   height: 3em;
-  width: 12%;
+  width: 13%;
 }
 
 .listElement > a, .contact {
@@ -29,10 +29,30 @@
 }
 
 .listElement > a > p, .contact > p{
-  margin-left: 8px;
+  margin: 0 8px 0 5px;
 }
 
 .listElement:hover {
   color: var(--white);
   background-color: var(--gray);
+}
+
+.arrow, .arrowVisible {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.arrowVisible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
