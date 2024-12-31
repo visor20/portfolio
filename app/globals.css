@@ -1,6 +1,6 @@
 :root {
   --white: #f6f6f6;
-  --black: #050910;
+  --black: #1d2525;
   --deep-black: #041417;
   --accent: #70e7d1;
   --gray: #748b8c;
@@ -44,5 +44,4 @@ a {
   top: 3em;
   left: 0;
   width: 100%;
-  height: calc(100vh - 3em);
 }

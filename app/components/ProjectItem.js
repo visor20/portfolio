@@ -3,8 +3,9 @@ import styles from './ProjectItem.module.css';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import PopUp from './PopUp';
+import ProjectInfo from './ProjectInfo';
 
-const ProjectItem = ({ title, text, imagePath, link }) => {
+const ProjectItem = ({ title, summary, body, imagePath, link, isYouTube}) => {
   const [isHover, setIsHover] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
 
@@ -36,19 +37,23 @@ const ProjectItem = ({ title, text, imagePath, link }) => {
       <PopUp 
         isOpen={isSelected}
         onClose={closePopUp}
-        children={<p>Hi</p>}
+        children={
+          <ProjectInfo 
+            title={title}
+            text={body}
+            link={link}
+            isYouTube={isYouTube}
+          />}
       />
 
       <div className={styles.titleBox}>
         <h1>{title}</h1>
       </div>
 
-      <div className={styles.buttonContainer}>
-        <Link href={link}>Click Me</Link>
+      <div className={styles.summary}>
+        <p>{summary}</p>
       </div>
 
-      <p>{text}</p>
-      
       <div className={styles.projectImage}>
         <img src={imagePath}/>
       </div>

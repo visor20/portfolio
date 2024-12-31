@@ -12,11 +12,22 @@
   z-index: 1000;
 }
 
+.footerUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3em;
+  list-style-type: none;
+}
+
 .listElement {
   display: flex;
   font-size: 1em;
   height: 3em;
   width: 13%;
+  min-width: 8em;
 }
 
 .listElement > a, .contact {
@@ -29,13 +40,15 @@
 }
 
 .listElement > a > p, .contact > p{
-  margin: 0 8px 0 5px;
+  margin: 0 8px 0 8px;
 }
 
+/*
 .listElement:hover {
   color: var(--white);
   background-color: var(--gray);
 }
+*/
 
 .arrow, .arrowVisible {
   margin: 0;

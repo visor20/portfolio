@@ -2,17 +2,21 @@ import { useState } from 'react';
 import Link from "next/link";
 import styles from './NavBar.module.css'
 import { FaHome } from "react-icons/fa";
-import { FaFaceSmileBeam, FaPaperPlane, FaFilePdf, FaFilePen } from "react-icons/fa6";
+import { FaFaceSmileBeam, FaPaperPlane, FaFilePdf, FaFilePen, FaGithub } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
+import { FaLinkedin } from "react-icons/fa";
 
 const iconDictionary = {
-    Home: <FaHome />,
-    Projects: <FaFilePen />,
-    About: <FaFaceSmileBeam />,
+    'Home': <FaHome />,
+    'Projects': <FaFilePen />,
+    'About': <FaFaceSmileBeam />,
+    'Resume': <FaFilePdf />,
+    'LinkedIn': <FaLinkedin />,
+    'GitHub': <FaGithub />,
 };
 
 
-const NavBar = ({ items, scrollFunction }) => {
+const NavBar = ({ items, scrollFunction, fixed }) => {
     const [curItem, setCurItem] = useState('');
 
     const handleMouseMove = (event) => {
@@ -28,15 +32,23 @@ const NavBar = ({ items, scrollFunction }) => {
 
     return(
         <ul 
-            className={styles.mainUl}
+            className={fixed ? styles.mainUl : styles.footerUl}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
         >
 
             {/* general navigation items */}
             {items.map((value, index) => (
-               <li className={styles.listElement} key={index}>
-                    <Link href={value.path}>
+               <li 
+                    className={styles.listElement}
+                    key={index} 
+                    style={!fixed ? {width: '100%'} : null}
+               >
+                    <Link
+                        href={value.path}
+                        target={value.blank ? '_blank' : ''}
+                        style={!fixed ? {justifyContent: 'left', padding: '5px'} : null}
+                    >
                         {iconDictionary[value.title]}
                         <p>{value.title}</p>
                         <div className={curItem === value.title ? styles.arrowVisible : styles.arrow}>
@@ -47,24 +59,20 @@ const NavBar = ({ items, scrollFunction }) => {
             ))}
 
             {/* navigation items with unique behavior */}
-            <li className={styles.listElement} onClick={scrollFunction}>
-                <div className={styles.contact}>
-                    <FaPaperPlane />
-                    <p>Contact Me</p>
-                    <div className={curItem === "Contact Me" ? styles.arrowVisible : styles.arrow}>
-                        <IoIosArrowForward />
-                    </div>
-                </div>
-            </li>
-            <li className={styles.listElement}>
-                <Link href="/Richard Viso - Resume.pdf" target ="_blank">
-                    <FaFilePdf />
-                    <p>Resume</p>
-                    <div className={curItem === "Resume" ? styles.arrowVisible : styles.arrow}>
-                        <IoIosArrowForward />
-                    </div>
-                </Link>
-            </li>
+            {scrollFunction 
+                ?
+                    <li className={styles.listElement} onClick={scrollFunction}>
+                        <div className={styles.contact}>
+                            <FaPaperPlane />
+                            <p>Contact Me</p>
+                            <div className={curItem === "Contact Me" ? styles.arrowVisible : styles.arrow}>
+                                <IoIosArrowForward />
+                            </div>
+                        </div>
+                    </li>
+                :
+                    null
+            }
         </ul>
     );
 }

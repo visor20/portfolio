@@ -1,0 +1,35 @@
+.mainContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+}
+
+.textInfo {
+    flex: 2;
+}
+
+.textInfo h2 {
+    margin-bottom: 8px;
+}
+
+.myButton {
+    height: 3em;
+    background-color: var(--gray);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.myButton p {
+    margin-right: 5px;
+}
+
+.myButton:hover {
+    background-color: var(--accent);
+}

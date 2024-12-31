@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 import TypingBox from './TypingBox';
 import styles from './MyLogo.module.css';
 import typingStyles from './TypingBox.module.css';
+import Background from './Background';
 
 const SHADOW_VAL = 50;
+const NUM_CLICK_ME = 10;
 
 const MyLogo = () => {
   const [isSelected, setIsSelected] = useState(false);
@@ -29,17 +31,7 @@ const MyLogo = () => {
   };
 
   return (
-    <motion.div
-      className={styles.background}
-      onMouseMove={handleMouseMove}
-      style={{
-        background: 'linear-gradient(to right, #748b8c, #ffffff)',
-        backgroundSize: '200% 100%',
-      }}
-      animate={{ backgroundPosition: '100% 50%' }}
-      transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-    >
-
+    <Background handleMouseMove={handleMouseMove}>
       <motion.div
         onClick={handleClick}
         className={styles.logoContainer}
@@ -49,7 +41,7 @@ const MyLogo = () => {
       >
 
       <div className={styles.clickMe}>
-        {Array.from({ length: 8 }, (_, i) => (
+        {Array.from({ length: NUM_CLICK_ME }, (_, i) => (
           <p key={i}>click me</p>
         ))}
       </div>
@@ -70,14 +62,13 @@ const MyLogo = () => {
 
 
       <div className={styles.clickMe}>
-        {Array.from({ length: 8 }, (_, i) => (
+        {Array.from({ length: NUM_CLICK_ME }, (_, i) => (
           <p key={i}>click me</p>
         ))}
       </div>
 
       </motion.div>
-
-    </motion.div>
+    </Background>
   );
 };
 

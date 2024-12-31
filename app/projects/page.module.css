@@ -1,5 +1,6 @@
 .parentContainer {
-  width: 80%;
+  width: 100%;
+  height: calc(200vh - 3em);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,15 +8,15 @@
 }
 
 .message {
-  margin: 1em 0 2em 0;
+  margin: 0 0 4em 0;
   color: var(--gray);
 }
 
 .gridContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
   gap: 2em;
-  height: 100%;
-  width: 100%;
+  height: 75%;
+  width: 75%;
 }
