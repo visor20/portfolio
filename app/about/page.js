@@ -1,19 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './Page.module.css';
 import Background from '../components/Background';
 import { GoPerson } from "react-icons/go";
 import { IconContext } from 'react-icons';
+import Slideshow from '../components/Slideshow';
+import { MdArrowForwardIos } from 'react-icons/md';
 
 // root/about
 
+const images = [
+  '/grad.jpg',
+  '/pp-1.jpg',
+  '/boots2.jpg',
+];
+
 const page = () => {
+    const textRef = useRef(null);
+
+    const handleClick = () => {
+      if (textRef.current) {
+        textRef.current.scrollIntoView({behavior: 'smooth', block: 'center'})
+      }
+    };
+
     return (
       <Background>
         <div className={styles.mainAboutContainer}>
       
-          <div className={styles.aboutTextContainer}>
+          <Slideshow 
+            slides={images}
+            interval={4000}
+          />
+
+          <div
+            className={styles.aboutButton}
+            onClick={handleClick}
+          >
+            <IconContext.Provider value={{size: '50px', className: `${styles.downArrow}`}}>
+              <MdArrowForwardIos />
+            </IconContext.Provider>
+          </div>
+
+          <div className={styles.aboutTextContainer} ref={textRef}>
             <div className={styles.aboutText}>
               <div className={styles.aboutIcon}>
                 <IconContext.Provider value={{size: '50px'}}>
@@ -25,13 +55,14 @@ const page = () => {
                 <h2>About Me</h2>
               </div>
 
-              <p>
+              <p className={styles.spaceAfter}>
                 I am a graduate of Stanford University who specializes in full stack software development.
                 I graduated in June of 2024, with a GPA of 3.81 in <a className={styles.textLink} href="https://symsys.stanford.edu/"
                 target="_blank">Symbolic Systems. </a>I took classes such as Data Structures and Algorithms, Computer Systems, 
                 and Probability and Statistics for Computer Scientists while also studying Linguistics, Philosophy, 
                 and Human-Computer Interaction.
-
+              </p>
+              <p>
                 Outside of Stanford, I worked as a Software Engineering Intern at Dolby Laboratories on
                 their new 
                 <a className={styles.textLink} href="https://www.dolby.com/technologies/dolby-atmos/dolby-atmos-flexconnect/" target="_blank"> FlexConnect API. </a>
@@ -43,20 +74,6 @@ const page = () => {
               </p>
             </div>
           </div>
-          
-          <div className={styles.aboutImageContainer}>
-            <img
-              className={styles.ppImage}
-              src="/pp-1.jpg"
-              alt="about picture 1" 
-            />
-            <img
-              className={styles.bootsImage}
-              src="/boots2.jpg"
-              alt="about picture 2"
-            />
-          </div>
-
         </div>
       </Background>
     );

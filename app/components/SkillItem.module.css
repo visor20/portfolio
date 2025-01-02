@@ -1,0 +1,12 @@
+.skillContainer {
+    min-width: 50px;
+    background-color: var(--white);
+    color: var(--gray);
+    border-radius: 10px;
+    border: solid 2px var(--gray);
+    margin: 0 8px 8px 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
