@@ -59,7 +59,7 @@ const itemList = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [isSelected, setIsSelected] = useState(false);
   const [popIndex, setPopIndex] = useState(0);
 
@@ -79,15 +79,15 @@ const page = () => {
       <PopUp 
         isOpen={isSelected}
         onClose={closePopUp}
-        children={
-          <ProjectInfo 
-            title={itemList[popIndex].title}
-            text={itemList[popIndex].body}
-            link={itemList[popIndex].link}
-            isYouTube={itemList[popIndex].youtube}
-            skills={itemList[popIndex].skills}
-          />}
-      />
+      >
+        <ProjectInfo 
+          title={itemList[popIndex].title}
+          text={itemList[popIndex].body}
+          link={itemList[popIndex].link}
+          isYouTube={itemList[popIndex].youtube}
+          skills={itemList[popIndex].skills}
+        />
+      </PopUp>
 
         <div className={styles.message}>
           <h3>Click a Project to learn more!</h3>
@@ -117,4 +117,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

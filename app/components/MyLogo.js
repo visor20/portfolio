@@ -32,42 +32,31 @@ const MyLogo = () => {
 
   return (
     <Background handleMouseMove={handleMouseMove}>
-      <motion.div
-        onClick={handleClick}
-        className={styles.logoContainer}
-        style={{boxShadow: `${shadow.x}px ${shadow.y}px rgba(0, 0, 0, 0.2)`}}
-        whileHover={{scale: 1.05}}
-        transition={{duration: 0.3}}
-      >
+      <div className={styles.logoBackground}>
+        <motion.div
+          onClick={handleClick}
+          className={styles.logoContainer}
+          style={{boxShadow: `${shadow.x}px ${shadow.y}px rgba(0, 0, 0, 0.2)`}}
+          whileHover={{scale: 1.05}}
+          transition={{duration: 0.3}}
+        >
 
-      <div className={styles.clickMe}>
-        {Array.from({ length: NUM_CLICK_ME }, (_, i) => (
-          <p key={i}>click me</p>
-        ))}
+        {isSelected
+          ?
+          <div className={typingStyles.parentContainer}>
+            <TypingBox text={'Richard'} delay={125} alignmentFlag={true} /> 
+            <TypingBox text={'Viso'} delay={275} alignmentFlag={false} /> 
+          </div>
+          :
+          <img 
+            src="/vLogo1.svg"
+            className={styles.logo}
+            alt="Viso logo"
+          />
+        }
+
+        </motion.div>
       </div>
-
-      {isSelected
-        ?
-        <div className={typingStyles.parentContainer}>
-          <TypingBox text={'Richard'} delay={125} alignmentFlag={true} /> 
-          <TypingBox text={'Viso'} delay={275} alignmentFlag={false} /> 
-        </div>
-        :
-        <img 
-          src="/vLogo1.svg"
-          className={styles.logo}
-          alt="Viso logo"
-        />
-      }
-
-
-      <div className={styles.clickMe}>
-        {Array.from({ length: NUM_CLICK_ME }, (_, i) => (
-          <p key={i}>click me</p>
-        ))}
-      </div>
-
-      </motion.div>
     </Background>
   );
 };

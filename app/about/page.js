@@ -16,7 +16,7 @@ const images = [
   '/boots2.jpg',
 ];
 
-const page = () => {
+const Page = () => {
     const textRef = useRef(null);
 
     const handleClick = () => {
@@ -79,4 +79,4 @@ const page = () => {
     );
 }
 
-export default page;
+export default Page;

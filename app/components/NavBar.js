@@ -64,8 +64,8 @@ const NavBar = ({ items, scrollFunction, fixed }) => {
                     <li className={styles.listElement} onClick={scrollFunction}>
                         <div className={styles.contact}>
                             <FaPaperPlane />
-                            <p>Contact Me</p>
-                            <div className={curItem === "Contact Me" ? styles.arrowVisible : styles.arrow}>
+                            <p>Contact</p>
+                            <div className={curItem === "Contact" ? styles.arrowVisible : styles.arrow}>
                                 <IoIosArrowForward />
                             </div>
                         </div>

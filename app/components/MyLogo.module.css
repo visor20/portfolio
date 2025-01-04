@@ -1,8 +1,15 @@
+.logoBackground {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .logoContainer {
   position: relative;
-  top: -2em;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 5px;
 
@@ -10,7 +17,7 @@
   padding: 2em;
 
   /* ensure space for animation */
-  height: 50%;
+  height: 300px;
   width: 50%;
   cursor: pointer;
 }
@@ -20,9 +27,14 @@
   height: auto;
 }
 
-.clickMe {
-  height: 100%;
-  color: var(--light-gray); 
-  overflow: hidden;
-  font-size: 0.75em;
+@media (max-width: 1000px) {
+  .logoContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logoContainer {
+    width: 90%;
+  }
 }
