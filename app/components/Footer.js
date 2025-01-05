@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styles from './Footer.module.css';
 import NavBar from './NavBar';
 import { MdEmail, MdOutlinePhoneIphone } from 'react-icons/md';
@@ -15,7 +16,31 @@ const footerNavItems = [
   },
 ];
 
+const email = 'richardnviso@gmail.com';
+const mobile = '(225) 287 - 0149';
+
 const Footer = ({ ref }) => {
+    const [copyId, setCopyId] = useState(0);
+
+    const handleInfoClick = async (event) => {
+      const text = event.target.innerText;
+      // console.log(text);
+
+      try {
+        await navigator.clipboard.writeText(text);
+        if (text === email) {
+          setCopyId(1);
+        }
+        else if (text === mobile) {
+          setCopyId(2);
+        }
+        setTimeout(() => setCopyId(0), 2000);
+      }
+      catch(error) {
+        console.error('Cannot Copy to Clipboard: ', error);
+      }
+    };
+
     return(
       <div ref={ref} className={styles.mainContainer}>
         <div className={styles.subContainer}>
@@ -31,14 +56,34 @@ const Footer = ({ ref }) => {
           />
 
           <div className={styles.info}>
-            <div className={styles.infoItem}>
-              <MdEmail />
-              <p>richardnviso@gmail.com</p>
+            <div className={styles.infoItem} onClick={handleInfoClick}>
+              <div className={styles.infoIcon}>
+                <MdEmail />
+              </div>
+              <p>{email}</p>
+              {copyId === 1 
+                ? 
+                  <div className={styles.copyMessage}>
+                    <p>Copied to Clipboard!</p>
+                  </div>
+                : 
+                  null
+              }
             </div>
 
-            <div className={styles.infoItem}>
-              <MdOutlinePhoneIphone />
-              <p>(225) 287 - 0149</p>
+            <div className={styles.infoItem} onClick={handleInfoClick}>
+              <div className={styles.infoIcon}>
+                <MdOutlinePhoneIphone />
+              </div>
+              <p>{mobile}</p>
+              {copyId === 2 
+                ? 
+                  <div className={styles.copyMessage}>
+                    <p>Copied to Clipboard!</p>
+                  </div> 
+                : 
+                  null
+              }
             </div>
           </div>
         </div>

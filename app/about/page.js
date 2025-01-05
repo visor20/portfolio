@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import styles from './Page.module.css';
+import styles from './page.module.css';
 import Background from '../components/Background';
 import { GoPerson } from "react-icons/go";
 import { IconContext } from 'react-icons';

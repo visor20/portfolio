@@ -53,7 +53,7 @@ const itemList = [
     summary: "Meta...",
     body: "You can use the link below to view the source code and get a feel for my web development style. Typically, I prefer to use TypeScript, but I decided to stick to JavaScript since this is a relatively simple portfolio website.",
     imagePath: "/website.png",
-    link: "https://github.com/visor20/visor20.github.io",
+    link: "https://github.com/visor20/portfolio",
     youtube: false,
     skills: ['React', 'Next', 'HTML', 'CSS', 'Web Design', 'UI/UX'],
   },
